@@ -8,3 +8,6 @@ Real time data analysis has an abundance of practical usecases. It is essential 
 
 ## How does it work ?
 
+<img width="1160" alt="image" src="https://github.com/user-attachments/assets/512845fd-087d-40c1-8fd3-f9b45b95d988" />
+
+
