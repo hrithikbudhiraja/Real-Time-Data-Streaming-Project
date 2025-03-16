@@ -10,6 +10,8 @@ Real time data analysis has an abundance of practical usecases. It is essential 
 
 <img width="1126" alt="image" src="https://github.com/user-attachments/assets/d6007227-113c-418b-86cd-834d95a7daba" />
 
+Dummy data generated using faker, having naming convention: <table_name>_<currrent_timestamp>.csv is ingested to s3 buckets using Apache Nifi. The data is scheduled to ingested at an interval of 1 minute. If a new file is generated in the interval, then it will be ingested in the S3 bucket. Through snowpipe, a staging table, customer_raw is created on top of this file. Utilizing Snowflakre Task, procedures are crrated to load this data into the final target tables: customer and customer_history table. Task tsk_scd_customer loads the latest data into customer table employeing the SCD1 strategy, while task tsk_scd_customer_history tracks the changes in the customer table with the help of stream customer_table_changes created on top of the customer table. 
+
 
 
 
