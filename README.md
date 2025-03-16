@@ -3,7 +3,7 @@
 This project has been created to implement real-time data analysis for customer data in Snowflake, handling incremental data loads through Change Data Capture and Slowly Changing Dimensions.
 
 ## Why ?
-Real time data analysis has an abundance of practical usecases. It is essential essential for businesses needing to make swift, informed decisions in dynamic environments. It enables immediate access to current information, allowing for rapid responses to market shifts and operational issues. customer experiences through personalized interactions and proactive problem-solving. 
+Real time data analysis has an abundance of practical usecases. It is essential essential for businesses needing to make swift, informed decisions in dynamic environments. It enables immediate access to current information, allowing for rapid responses to market shifts and operational issues. customer experiences through personalized interactions and proactive problem-solving. This project aims to implement a real time data ETL pipeline for customer data analysis
 
 
 ## How does it work ?
@@ -20,6 +20,10 @@ Data generated is then ingested to s3 buckets using Apache Nifi. The data is sch
 
 ### Data Transformation and Data Load
 Utilizing Snowflakre Task, procedures are crrated to load this data into the final target tables: customer and customer_history table. Task tsk_scd_customer loads the latest data into customer table employeing the SCD1 strategy, while task tsk_scd_customer_history tracks the changes in the customer table with the help of stream customer_table_changes created on top of the customer table. 
+
+## Conclusion
+In conclusion, this project successfully implemented a real-time data ETL pipeline, demonstrating the efficacy of Snowflake and Apache Nifi, in handling incremental data loads and providing up-to-the-minute insights
+
 
 
 
