@@ -19,7 +19,9 @@ Dummy data generated using faker, having naming convention: <table_name>_<currre
 Data generated is then ingested to s3 buckets using Apache Nifi. The data is scheduled to be ingested at an interval of 1 minute, a new file generated in this interval, will be ingested in the S3 bucket. Through snowpipe, a staging table, customer_raw is created on top of this file.
 
 ### Data Transformation and Data Load
-Utilizing Snowflakre Task, procedures are crrated to load this data into the final target tables: customer and customer_history table. Task tsk_scd_customer loads the latest data into customer table employeing the SCD1 strategy, while task tsk_scd_customer_history tracks the changes in the customer table with the help of stream customer_table_changes created on top of the customer table. 
+Utilizing Snowflake Task, procedures are created to load this data into the final target tables:
+- customer: Task tsk_scd_customer loads the latest data into customer table employing the SCD1 strategy,
+- customer_history table: Task tsk_scd_customer_history tracks the changes in the customer table with the help of stream customer_table_changes created on top of the customer table.
 
 ## Conclusion
 In conclusion, this project successfully implemented a real-time data ETL pipeline, demonstrating the efficacy of Snowflake and Apache Nifi, in handling incremental data loads and providing up-to-the-minute insights
